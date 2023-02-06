@@ -1,0 +1,22 @@
+body {
+    overflow-x: hidden;
+}
+
+.right {
+    animation: fadeinright 2s;
+}
+
+.left {
+    animation: fadeinleft 2s;
+}
+
+
+@keyframes fadeinleft {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0%); }
+}
+
+@keyframes fadeinright {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0%); }
+}
