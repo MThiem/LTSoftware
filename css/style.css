@@ -14,9 +14,6 @@ body {
     animation: fadeinleft 2s;
 }
 
-.down {
-    animation: fadeindown 2s;
-}
 .contact {
     /*background:linear-gradient(45deg,rgba(80,1,0,0.6), rgba(118,1,0,0.9));*/
     background: linear-gradient(45deg,rgba(80,1,0,0.6), rgba(118,1,0,0.9)), url("../img/envelopes.jpg");
@@ -37,8 +34,3 @@ body {
   from { transform: translateX(100%); }
   to   { transform: translateX(0%); }
 }
-
-@keyframes fadeindown {
-    from { transform: translateY(100%); }
-    to   { transform: translateY(0%); }
-  }
