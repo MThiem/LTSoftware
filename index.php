@@ -1,3 +1,7 @@
+<?php
+    error_reporting(0);
+    include 'send_mail.php';
+?>
 <!DOCTYPE html>
 <html lang="de-DE">
 <head>
@@ -13,15 +17,16 @@
 	<meta property="og:site_name" content="Lachmann Thiem Software GbR" />
     <link rel="stylesheet" href="css/main.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="/img/FavIcon.png">
+    <link rel="icon" type="image/x-icon" href="./img/FavIcon.png">
     <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="zxItm2_UW"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lfrz3QkAAAAAM7N868ufqCRj6FUFIAQCQjO1vcJ"></script>
 </head>
 <body>
     <!-- navbar -->
     <div class="container-xxl">
         <div class="row">
           <div class="col d-flex justify-content-center mt-4">
-            <a href="index.html" class="navbar-brand">
+            <a href="./" class="navbar-brand">
                 <img src="img/lachmannthiemlogo_sm.png" alt="" class="logo">
             </a>
           </div>
@@ -138,7 +143,7 @@
                     <p class="text-white-50">Schreiben Sie uns eine Nachricht und erzählen uns von Ihrer Idee</p>               
                 </div>
                 <div class="col-md-8 py-5 px-4 shadow rounded">
-                    <form method="post" action="send_mail.php">
+                    <form method="post" action="#contact">
                         <div class="form-group">
                           <input type="email" class="form-control" id="Email" placeholder="Email Adresse" name="email" required>
                         </div>
@@ -149,7 +154,24 @@
                             <textarea class="form-control" id="Nachricht" rows="7" placeholder="Ihre Nachricht" name="message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary mt-4" name="submit">Senden</button>
-                      </form>
+                        <?php
+                            if(isset($MailSuccess)): ?>
+                                <div class="alert alert-success mt-3" role="alert">
+                                    <?php echo $MailSuccess; ?>
+                                </div>
+                            <?php 
+                            endif;
+                            if(isset($MailError)): ?>
+                                <div class="alert alert-danger mt-3" role="alert">
+                                    <?php echo $MailError; ?>
+                                </div>
+                            <?php 
+                            endif;
+                            unset($MailSuccess);
+                            unset($MailError);
+                        ?>
+                        <input type="hidden" name="token" id="token" />
+                    </form>
                 </div>
             </div>
         </div>
@@ -166,8 +188,15 @@
             <li class="nav-item"><a href="AGB.html" class="nav-link px-2 text-muted">AGB</a></li>
           </ul>
         </footer>
-      </div>
-
+    </div>
+    <!--Recaptcha Script-->
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6Lfrz3QkAAAAAM7N868ufqCRj6FUFIAQCQjO1vcJ', {action: 'submit'}).then(function(token) {
+                document.getElementById("token").value = token;
+            });
+        });
+  </script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
