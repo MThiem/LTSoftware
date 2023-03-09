@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="css/main.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="./img/FavIcon.png">
-    <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="zxItm2_UW"></script>
+    <script id="usercentrics-cmp" async data-eu-mode="true" data-settings-id="zxItm2_UW" src="https://app.eu.usercentrics.eu/browser-ui/latest/loader.js"></script>
+    <script type="application/javascript" src="https://sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6Lfrz3QkAAAAAM7N868ufqCRj6FUFIAQCQjO1vcJ"></script>
 </head>
 <body>
@@ -31,7 +32,7 @@
             </a>
           </div>
         </div>
-        <div class="row my-4">
+        <!--<div class="row my-4">
           <div class="col d-flex justify-content-center">
             <div class="d-none d-sm-block">
               <ul class="nav">
@@ -41,16 +42,16 @@
               </ul>
           </div> 
           </div>
-        </div>
+        </div>-->
     </div>
     <!-- Hero Section-->
     <section>
-        <div class="container-xxl">
+        <div class="container-xxl mt-5">
             <div class="row">
-                <div class="col-xl-8 left">
+                <div class="col-xl-8 right">
                     <img src="img/hero.jpg" class="img-fluid rounded" alt="">
                 </div>
-                <div class="col-xl-4 rounded py-4 px-3 shadow d-flex align-items-start flex-column right">
+                <div class="col-xl-4 rounded py-4 px-3 shadow d-flex align-items-start flex-column left">
                     <h1 class="h4 text-primary mt-3">Hallo, wir sind Christian Lachmann und Michael Thiem, Softwareentwickler aus Forchheim!</h1>
                     <p class="mt-3">Sind Sie ein kleines Unternehmen oder Startup in der Metropolregion auf der Suche nach einer perfekt auf Ihre Bedürfnisse abgestimmten Softwarelösung? Unsere maßgeschneiderte Anwendungen und Tools erleichtern Ihnen den Arbeitsalltag und passen sich nahtlos in Ihre Geschäftsabläufe ein.</p>
                     <a href="#contact" type="button" class="btn btn-primary btn-lg mt-5">Kontaktieren Sie uns</a>
@@ -115,18 +116,14 @@
             </h2>
 
             <div class="row mt-3">
-                <div class="col-xl-5 rounded py-4 px-3 shadow d-flex align-items-start flex-column">
-                    <p class="mt-3">Als Fachinformatiker für Anwendungsentwicklung verfügen wir über tiefgreifendes Know-how und jahrelange Erfahrung im Bereich der Softwareentwicklung. Von Beginn an haben wir die digitale Ära miterlebt und uns von ihren Möglichkeiten begeistert. Deshalb haben wir uns entschlossen, unser Hobby zum Beruf zu machen.
-
-                        Wir haben uns im Microsoft- und .NET-Umfeld spezialisiert und können auf umfangreiche Projekte in den Bereichen Enterprise-Entwicklung, Datenanalyse, Business Intelligence und dem Betrieb von großen Softwarelandschaften zurückblicken. Dabei haben wir immer wieder bewiesen, dass wir komplexe Projekte erfolgreich umsetzen und hohe Anforderungen erfüllen können.
-                        
-                        Als Gründer der Lachmann Thiem Software GbR haben wir uns das Ziel gesetzt, unser Know-how und unsere Fähigkeiten als professionelle Softwareentwickler anzubieten. Wir wollen unsere Leidenschaft für die Softwareentwicklung mit unseren Kunden teilen und ihnen maßgeschneiderte Softwarelösungen bereitstellen, die ihren Arbeitsalltag erleichtern und sich perfekt in ihre Workflows integrieren.
-                        
-                        Als kleines und agiles Unternehmen sind wir flexibel und schnell in der Umsetzung. Wir arbeiten eng mit unseren Kunden zusammen, um ihre Bedürfnisse und Anforderungen bestmöglich zu verstehen und ihnen eine Lösung zu bieten, die genau auf sie zugeschnitten ist. Lassen Sie uns gemeinsam Ihre Visionen und Ziele in die Tat umsetzen!</p>
-                </div>
-                <div class="col-xl-7 d-flex">
+                <div class="col-xl-7">
                     <img src="img/aboutus.jpg" class="img-fluid rounded" alt="">
+                </div>    
+                <div class="col-xl-5 rounded py-4 px-3 shadow d-flex align-items-start flex-column">
+                    <p class="mt-3">
+                    Wir sind auf Microsoft- und .NET-Softwareentwicklung spezialisiert und haben umfangreiche Erfahrung in der Enterprise-Entwicklung, Datenanalyse, Business Intelligence und dem Betrieb von großen Softwarelandschaften. Wir haben bewiesen, dass wir komplexe Projekte erfolgreich umsetzen und hohe Anforderungen erfüllen können. Als Gründer der Lachmann Thiem Software GbR bieten wir maßgeschneiderte Softwarelösungen an, die den Arbeitsalltag unserer Kunden erleichtern und sich perfekt in ihre Workflows integrieren. Wir sind ein kleines und agiles Unternehmen, das eng mit unseren Kunden zusammenarbeitet, um ihre Bedürfnisse und Anforderungen bestmöglich zu verstehen und ihnen eine Lösung zu bieten, die genau auf sie zugeschnitten ist. Lassen Sie uns gemeinsam Ihre Visionen und Ziele verwirklichen!</p>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -137,10 +134,15 @@
                 Kontakt
             </h2>
             <div class="row mt-5">
-                <div class="col-md-4 p-3 shadow rounded contact d-flex justify-content-center align-items-center flex-column text-center">
-                    
+                <!--Big Screen -->
+                <div class="col-md-4 p-3 shadow rounded contact d-none d-md-flex d-flex justify-content-center align-items-center flex-column text-center">
                     <h4 class="display-7 text-light">Lassen Sie uns reden</h4>
                     <p class="text-white-50">Schreiben Sie uns eine Nachricht und erzählen uns von Ihrer Idee</p>               
+                </div>
+                <!--Small Screen -->
+                <div class="col-md-4 p-3 d-flex d-md-none d-flex justify-content-center align-items-center flex-column text-center">
+                    <h4 class="display-7 font-weight-bold text-primary">Lassen Sie uns reden</h4>
+                    <p class="lead">Schreiben Sie uns eine Nachricht und erzählen uns von Ihrer Idee</p>   
                 </div>
                 <div class="col-md-8 py-5 px-4 shadow rounded">
                     <form method="post" action="#contact">
